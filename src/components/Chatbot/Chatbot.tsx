@@ -11,6 +11,7 @@ import {
   getCustomComponents,
   getBotName,
   getCustomMessages,
+  getInputText,
 } from './utils';
 
 import useChatbot from '../../hooks/useChatbot';
@@ -23,6 +24,7 @@ interface IChatbotProps {
   headerText?: string;
   placeholderText?: string;
   saveMessages?: (ref: any) => any;
+  inputText:any;
   messageHistory?: IMessage[] | string;
   validator?: (input: string) => Boolean;
   runInitialMessagesWithHistory?: Boolean;
@@ -73,6 +75,7 @@ const Chatbot = ({
   const customComponents = getCustomComponents(config);
   const botName = getBotName(config);
   const customMessages = getCustomMessages(config);
+  const inputText = getInputText(config);
 
   return (
     <Chat
@@ -81,6 +84,7 @@ const Chatbot = ({
       widgetRegistry={widgetRegistry}
       actionProvider={actionProv}
       messageParser={messagePars}
+      inputText={inputText}
       customMessages={customMessages}
       customComponents={{ ...customComponents }}
       botName={botName}

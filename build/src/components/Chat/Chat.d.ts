@@ -10,6 +10,7 @@ interface IChatProps {
     customComponents: ICustomComponents;
     botName: string;
     customStyles: ICustomStyles;
+    inputText: string | null;
     headerText: string;
     customMessages: ICustomMessage;
     placeholderText: string;
@@ -19,5 +20,5 @@ interface IChatProps {
     disableScrollToBottom: boolean;
     messageHistory: IMessage[] | string;
 }
-declare const Chat: ({ state, setState, widgetRegistry, messageParser, customComponents, actionProvider, botName, customStyles, headerText, customMessages, placeholderText, validator, setMessageContainerRef, disableScrollToBottom, messageHistory, }: IChatProps) => JSX.Element;
+declare const Chat: ({ state, setState, widgetRegistry, messageParser, customComponents, actionProvider, botName, customStyles, inputText, headerText, customMessages, placeholderText, validator, setMessageContainerRef, disableScrollToBottom, messageHistory, }: IChatProps) => JSX.Element;
 export default Chat;

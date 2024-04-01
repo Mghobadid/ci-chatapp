@@ -6,6 +6,12 @@ export const getCustomStyles = (config: IConfig) => {
   }
   return {};
 };
+export const getInputText = (config: IConfig) => {
+  if (config.inputText) {
+    return config.inputText;
+  }
+  return null;
+};
 
 export const getInitialState = (config: IConfig) => {
   if (config.state) {

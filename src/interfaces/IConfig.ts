@@ -8,6 +8,7 @@ interface IConfig {
   initialMessages: IMessage[];
   state?: any;
   customComponents?: ICustomComponents;
+  inputText?:string;
   customStyles?: ICustomStyles;
   customMessages?: ICustomMessage;
   widgets?: IWidget[];

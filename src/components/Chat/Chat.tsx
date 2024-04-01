@@ -30,6 +30,7 @@ interface IChatProps {
   customComponents: ICustomComponents;
   botName: string;
   customStyles: ICustomStyles;
+  inputText:string|null;
   headerText: string;
   customMessages: ICustomMessage;
   placeholderText: string;
@@ -49,6 +50,7 @@ const Chat = ({
   actionProvider,
   botName,
   customStyles,
+  inputText,
   headerText,
   customMessages,
   placeholderText,
@@ -251,7 +253,12 @@ const Chat = ({
   if (placeholderText) {
     placeholder = placeholderText;
   }
-
+  useEffect(() => {
+    if (inputText) {
+      setInputValue(inputText);
+    }
+  }, [inputText]); 
+ 
   return (
     <div className="react-chatbot-kit-chat-container">
       <div className="react-chatbot-kit-chat-inner-container">
