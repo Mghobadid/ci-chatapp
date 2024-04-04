@@ -20,7 +20,12 @@ export const getWidgets = (config: IConfig) => {
   }
   return [];
 };
-
+export const getInputText = (config: IConfig) => {
+  if (config.inputText) {
+    return config.inputText;
+  }
+  return null;
+};
 export const getCustomComponents = (config: IConfig) => {
   if (config.customComponents) {
     return config.customComponents;

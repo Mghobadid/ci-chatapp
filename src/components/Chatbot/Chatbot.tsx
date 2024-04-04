@@ -11,6 +11,7 @@ import {
   getCustomComponents,
   getBotName,
   getCustomMessages,
+  getInputText,
   isConstructor,
 } from './utils';
 
@@ -77,6 +78,7 @@ const Chatbot = ({
   const customComponents = getCustomComponents(config);
   const botName = getBotName(config);
   const customMessages = getCustomMessages(config);
+  const inputText = getInputText(config);
 
   if (isConstructor(ActionProvider) && isConstructor(MessageParser)) {
     return (
@@ -91,6 +93,7 @@ const Chatbot = ({
         botName={botName}
         customStyles={{ ...customStyles }}
         headerText={headerText}
+        inputText={inputText}
         placeholderText={placeholderText}
         validator={validator}
         messageHistory={messageHistory}
@@ -116,6 +119,7 @@ const Chatbot = ({
             customComponents={{ ...customComponents }}
             botName={botName}
             customStyles={{ ...customStyles }}
+            inputText={inputText}
             headerText={headerText}
             placeholderText={placeholderText}
             validator={validator}

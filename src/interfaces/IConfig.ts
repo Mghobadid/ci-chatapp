@@ -11,6 +11,7 @@ interface IConfig {
   customStyles?: ICustomStyles;
   customMessages?: ICustomMessage;
   widgets?: IWidget[];
+  inputText?:string;
 }
 
 export interface ICustomComponents {
