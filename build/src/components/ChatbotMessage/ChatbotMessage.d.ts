@@ -4,6 +4,7 @@ import { ICustomComponents } from '../../interfaces/IConfig';
 interface IChatbotMessageProps {
     message: string;
     withAvatar?: boolean;
+    payload?: any;
     loading?: boolean;
     messages: any[];
     delay?: number;
@@ -14,5 +15,5 @@ interface IChatbotMessageProps {
         backgroundColor: string;
     };
 }
-declare const ChatbotMessage: ({ message, withAvatar, loading, messages, customComponents, setState, customStyles, delay, id, }: IChatbotMessageProps) => JSX.Element;
+declare const ChatbotMessage: ({ message, withAvatar, payload, loading, messages, customComponents, setState, customStyles, delay, id, }: IChatbotMessageProps) => JSX.Element;
 export default ChatbotMessage;

@@ -161,6 +161,7 @@ const Chat = ({
       <>
         <UserChatMessage
           message={messageObject.message}
+          payload={messageObject.payload}
           key={messageObject.id}
           customComponents={customComponents}
         />
@@ -179,6 +180,7 @@ const Chat = ({
 
     const chatbotMessageProps = {
       ...messageObject,
+      payload: messageObject.payload,
       setState,
       state,
       customComponents,

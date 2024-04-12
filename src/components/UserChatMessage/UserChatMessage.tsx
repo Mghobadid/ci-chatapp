@@ -10,11 +10,13 @@ import { ICustomComponents } from '../../interfaces/IConfig';
 
 interface IUserChatMessageProps {
   message: string;
+  payload:any;
   customComponents: ICustomComponents;
 }
 
 const UserChatMessage = ({
   message,
+  payload,
   customComponents,
 }: IUserChatMessageProps) => {
   return (
@@ -23,6 +25,7 @@ const UserChatMessage = ({
         condition={!!customComponents.userChatMessage}
         show={callIfExists(customComponents.userChatMessage, {
           message,
+          payload,
         })}
         elseShow={
           <div className="react-chatbot-kit-user-chat-message">

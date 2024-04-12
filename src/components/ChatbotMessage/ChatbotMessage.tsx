@@ -11,6 +11,7 @@ import { ICustomComponents, ICustomStyles } from '../../interfaces/IConfig';
 interface IChatbotMessageProps {
   message: string;
   withAvatar?: boolean;
+  payload?: any;
   loading?: boolean;
   messages: any[];
   delay?: number;
@@ -22,6 +23,7 @@ interface IChatbotMessageProps {
 const ChatbotMessage = ({
   message,
   withAvatar = true,
+  payload,
   loading,
   messages,
   customComponents,
@@ -103,6 +105,7 @@ const ChatbotMessage = ({
             condition={!!customComponents?.botChatMessage}
             show={callIfExists(customComponents?.botChatMessage, {
               message,
+              payload,
               loader: <Loader />,
             })}
             elseShow={
