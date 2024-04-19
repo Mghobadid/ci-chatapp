@@ -31,7 +31,7 @@ interface IChatProps {
   botName: string;
   customStyles: ICustomStyles;
   headerText: string;
-  inputText:string|null;
+  inputText: string | null;
   customMessages: ICustomMessage;
   placeholderText: string;
   validator: (input: string) => Boolean;
@@ -272,8 +272,11 @@ const Chat = ({
   useEffect(() => {
     if (inputText) {
       setInputValue(inputText);
+    } else if (inputText = "--clear--") {
+      setInputValue("");
     }
-  }, [inputText]); 
+
+  }, [inputText]);
 
   return (
     <div className="react-chatbot-kit-chat-container">
